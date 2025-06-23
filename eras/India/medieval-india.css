@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  background-color: #f9f5f0;
+  color: #2e1a0e;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+body.page-loaded {
+  opacity: 1;
+}
+
+.india-hero {
+  height: 100vh;
+  background: url('Images/medieval-india.webp') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.overlay {
+  background-color: rgba(250, 242, 219, 0.88);
+  padding: 3rem;
+  border-radius: 16px;
+  max-width: 800px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.overlay h1 {
+  font-size: 3.5rem;
+  color: #7a311c;
+  margin-bottom: 1rem;
+}
+
+.overlay p {
+  font-size: 1.3rem;
+  color: #4e2e1b;
+}
+
+.india-content,
+.gallery-section,
+.back-button-section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.india-content h2,
+.gallery-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #6c2f14;
+  border-left: 6px solid #b78534;
+  padding-left: 0.8rem;
+}
+
+.india-content p {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: #3a2615;
+}
+
+.india-content ul {
+  list-style: disc inside;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #4a311c;
+}
+
+blockquote {
+  background-color: #f5e7cc;
+  padding: 1.5rem 2rem;
+  border-left: 6px solid #b78534;
+  border-radius: 8px;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #5a3920;
+}
+
+blockquote span {
+  display: block;
+  margin-top: 0.8rem;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  color: #865c28;
+}
+
+.gallery-section {
+  background-color: #f8f1e5;
+  border-top: 4px solid #c69e54;
+  border-bottom: 4px solid #c69e54;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.gallery-scroll {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: thin;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery-item {
+  text-align: center;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.gallery-item img {
+  height: 280px;
+  width: 200px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 4px solid #e7d6ae;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-item p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #563716;
+}
+
+.back-button-section {
+  text-align: center;
+}
+
+.back-button-section a {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #9c6224;
+  color: #fffef8;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button-section a:hover {
+  background-color: #bb7c2f;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #9c6224;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: none;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-top-btn:hover {
+  background-color: #bb7c2f;
+}
+
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2.4rem;
+  }
+
+  .overlay p {
+    font-size: 1.05rem;
+  }
+
+  .india-content,
+  .gallery-section,
+  .back-button-section {
+    padding: 3rem 1.2rem;
+  }
+
+  .gallery-item img {
+    height: 200px;
+    width: 150px;
+  }
+}

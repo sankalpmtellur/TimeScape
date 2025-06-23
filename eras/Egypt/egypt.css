@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #fefaf3;
+    color: #2d241a;
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+.egypt-hero {
+    height: 100vh;
+    background: url('Images/egypt-background.webp') center center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay {
+    background-color: rgba(255, 250, 240, 0.85);
+    padding: 3rem;
+    border-radius: 16px;
+    max-width: 800px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.overlay h1 {
+    font-size: 3.5rem;
+    color: #6c4a23;
+    margin-bottom: 1rem;
+}
+
+.overlay p {
+    font-size: 1.3rem;
+    color: #3d301f;
+}
+
+.egypt-content,
+.gallery-section,
+.back-button-section {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.egypt-content h2,
+.gallery-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #5a3b1f;
+    border-left: 6px solid #c4a04e;
+    padding-left: 0.8rem;
+}
+
+.egypt-content p {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    color: #2e261b;
+}
+
+.egypt-content ul {
+    list-style: disc inside;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #3a2e1e;
+}
+
+blockquote {
+    background-color: #fcf3db;
+    padding: 1.5rem 2rem;
+    border-left: 6px solid #c89d38;
+    border-radius: 8px;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #5a4123;
+}
+
+blockquote span {
+    display: block;
+    margin-top: 0.8rem;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    color: #826432;
+}
+
+.gallery-section {
+    background-color: #fdf8ec;
+    border-top: 4px solid #d2ae5a;
+    border-bottom: 4px solid #d2ae5a;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.gallery-scroll {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scrollbar-width: thin;
+    scroll-snap-type: x mandatory;
+}
+
+.gallery-item {
+    text-align: center;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+}
+
+.gallery-item img {
+    height: 280px;
+    width: 200px;
+    border-radius: 14px;
+    object-fit: cover;
+    border: 4px solid #e8d5a2;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-item p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #5a4521;
+}
+
+.back-button-section {
+    text-align: center;
+}
+
+.back-button-section a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #b2822b;
+    color: #fffef9;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button-section a:hover {
+    background-color: #d3a845;
+}
+
+@media (max-width: 768px) {
+    .overlay h1 {
+        font-size: 2.4rem;
+    }
+
+    .overlay p {
+        font-size: 1.05rem;
+    }
+
+    .egypt-content,
+    .gallery-section,
+    .back-button-section {
+        padding: 3rem 1.2rem;
+    }
+
+    .gallery-scroll img {
+        height: 160px;
+    }
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #b2822b;
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top-btn:hover {
+    background-color: #d4a742;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
